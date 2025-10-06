@@ -1,5 +1,5 @@
 import pytest
-from app.calculator import divide  # import the divide function
+from app.calculator import divide
 
 def test_division():
     assert divide(10, 2) == 5
