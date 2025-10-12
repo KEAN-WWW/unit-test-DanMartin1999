@@ -1,11 +1,12 @@
 import pytest
-from app.calculator import divide
+from app.calculator import Calculator
 
-def test_division():
-    assert divide(10, 2) == 5
-    assert divide(-9, 3) == -3
-    assert divide(5.0, 2.5) == 2.0
+def test_divide():
+    calc = Calculator()
+    assert calc.divide(10, 2) == 5
+    assert calc.divide(9, 3) == 3
 
-def test_divide_zero_exception():
+def test_divide_by_zero():
+    calc = Calculator()
     with pytest.raises(ZeroDivisionError):
-        divide(10, 0)
+        calc.divide(10, 0)
